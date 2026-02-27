@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   // base: '/awais-llc/',  ← uncomment & set to your repo name if NOT using a custom domain
   // base: '/',            ← keep as '/' if using a custom domain (e.g. awais.us)
-  base: "/",
+  base: "/awais-llc/",
   server: {
     host: "::",
     port: 8080,
