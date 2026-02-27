@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 217 68% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 55% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 55% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 186 100% 50%;
+    --primary-foreground: 217 68% 11%;
+
+    --secondary: 217 40% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 30% 22%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 30% 22%;
+    --input: 217 30% 25%;
+    --ring: 186 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 217 68% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 186 100% 50%;
+    --sidebar-primary-foreground: 217 68% 11%;
+    --sidebar-accent: 217 40% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 30% 22%;
+    --sidebar-ring: 186 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-card/40 backdrop-blur-xl border border-border/50;
+  }
+  .glass-strong {
+    @apply bg-card/60 backdrop-blur-2xl border border-border/60;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  .glow-cyan {
+    box-shadow: 0 0 30px -5px hsl(186 100% 50% / 0.25);
+  }
+  .glow-cyan-sm {
+    box-shadow: 0 0 15px -3px hsl(186 100% 50% / 0.2);
+  }
+  .mesh-bg {
+    background-image:
+      linear-gradient(hsl(217 68% 15% / 0.8) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(217 68% 15% / 0.8) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@layer utilities {
+  .prose-awais {
+    @apply text-muted-foreground leading-relaxed;
+  }
+  .prose-awais h1, .prose-awais h2, .prose-awais h3 {
+    @apply text-foreground font-heading font-bold mt-8 mb-4;
+  }
+  .prose-awais h1 { @apply text-3xl; }
+  .prose-awais h2 { @apply text-2xl; }
+  .prose-awais h3 { @apply text-xl; }
+  .prose-awais p { @apply mb-4; }
+  .prose-awais ul, .prose-awais ol { @apply mb-4 pl-6; }
+  .prose-awais ul { @apply list-disc; }
+  .prose-awais ol { @apply list-decimal; }
+  .prose-awais li { @apply mb-2; }
+  .prose-awais a { @apply text-primary underline hover:text-primary/80 transition-colors; }
+  .prose-awais blockquote { @apply border-l-4 border-primary pl-4 italic my-4 text-foreground/80; }
+  .prose-awais code { @apply bg-muted px-1.5 py-0.5 rounded text-sm text-primary; }
+  .prose-awais pre { @apply bg-muted p-4 rounded-lg overflow-x-auto mb-4; }
+  .prose-awais pre code { @apply bg-transparent p-0; }
+}
